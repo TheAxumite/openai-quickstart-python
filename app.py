@@ -3,8 +3,12 @@ import os
 import openai
 from flask import Flask, redirect, render_template, request, url_for
 
+secrets = openai_secret_manager.get_secrets("openai")
+api_key = secrets["api_key"]
+
+
 app = Flask(__name__)
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route("/", methods=("GET", "POST"))
@@ -15,6 +19,7 @@ def index():
             model="text-davinci-003",
             prompt=generate_prompt(animal),
             temperature=0.6,
+            max_tokens = 4000
         )
         return redirect(url_for("index", result=response.choices.text))
 
