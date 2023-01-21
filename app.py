@@ -3,8 +3,8 @@ import os
 import openai
 from flask import Flask, redirect, render_template, request, url_for
 
-secrets = openai_secret_manager.get_secrets("openai")
-api_key = secrets["api_key"]
+
+
 
 
 app = Flask(__name__)
