@@ -8,7 +8,7 @@ from flask import Flask, redirect, render_template, request, url_for
 
 
 app = Flask(__name__)
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route("/", methods=("GET", "POST"))
